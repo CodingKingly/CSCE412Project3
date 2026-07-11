@@ -6,8 +6,21 @@ void Loadbalancer::loadBalancerStartCycle(int startCycle){
 
 void Loadbalancer::loadBalancerStartServers(int startServers){
     numServers = startServers;
-    for(num)
+    for(int i = 0; i < startServers; i++){
+        Webserver newWbeserver;
+        WebserverQueue.push(newWbeserver);
+    }
 }
+
+void Loadbalancer::loadBalancerStartRequest(int startServers){
+    numServers = startServers;
+    for(int i = 0; i < startServers; i++){
+        Request newrequest;
+        requestQueue.push(newrequest);
+    }
+}
+
+
 
 void Loadbalancer::loadBalancerStartServers(int)
 void Loadbalancer::loadbalancerStart(){

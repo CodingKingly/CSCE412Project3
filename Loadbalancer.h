@@ -16,7 +16,7 @@ class Loadbalancer{
         
         void loadBalancerStartCycle(int startCycle){};
         void loadBalancerStartServers(int startServers){};
-        void loadBalancerStartServers(int startRequest){};
+        void loadBalancerStartRequest(int startRequest){};
 
         void createServer();
         void deleteServer();
