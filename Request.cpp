@@ -20,9 +20,11 @@ Request makearandomRequest()
 
     int randomTotalTime = randomTimeDistrib(gen);
 
+    uniform_int_distribution<> randomTimeDistrib(0,1);
+    int randomJobTypeSeed = randomTimeDistrib(gen);
     //random jobtype 
     char randomJobType;
-    if(rand() % 2 == 0){
+    if(randomJobTypeSeed % 2 == 0){
         randomJobType = 'p';
     }
     else{

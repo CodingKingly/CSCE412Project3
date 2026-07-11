@@ -10,9 +10,9 @@ class Webserver{
         
 
     public: 
-    bool busy;
+    bool busy = false;
     int ServerID;
-    
+
     void assignRequest(const Request& request);
     Request seeRequest();
     void runCycle();
