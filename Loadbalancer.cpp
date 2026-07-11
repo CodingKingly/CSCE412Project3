@@ -4,8 +4,18 @@ void Loadbalancer::loadBalancerStartCycle(int startCycle){
     clockCycle = startCycle;
 }
 
+void Loadbalancer::loadBalancerType(char type){
+    jobType = type;
+}
+
+void Loadbalancer::addRequest(Request re){
+    requestQueue.push(re);
+}
+
+bool Loadbalancer::requestQueueempty(){
+    return requestQueue.empty();
+}
 void Loadbalancer::loadBalancerStartServers(int startServers){
-    
     nextServerID = 0;
     for(int i = 0; i < startServers; i++){
         Webserver newWbeserver;
@@ -23,19 +33,17 @@ void Loadbalancer::loadBalancerStartRequest(){
     }
 }
 
-void Loadbalancer::loadbalancerStart(){
+int Loadbalancer::getRequestQueueSize(){
+    return requestQueue.size();
+}
+
+void Loadbalancer::OneCylce(){
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> addRequest(0, 5);
-    int currentClockCycle = 0;
-
-    while(currentClockCycle < clockCycle){
-
-        cout << "Clock Cycle: " << currentClockCycle << " has started" << endl
-        << "There are this many request left " << requestQueue.size() << endl;
 
         //Helps add or delete servers every 50 cycles 
-        if (currentClockCycle % 50 == 0)
+        if (clockCycle % 50 == 0)
         {   //Helps add a server
             if(requestQueue.size() > WebserverVec.size() * 100){
                 int numNewServers = (((requestQueue.size() - (WebserverVec.size() * 100)) + 99) / 100);
@@ -95,10 +103,5 @@ void Loadbalancer::loadbalancerStart(){
         }
 
         //add to the current clock cycle 
-        currentClockCycle++;
-        if(requestQueue.empty()){
-            cout << "all request are complete!" << endl;
-            break;
-        }
-    }
+        clockCycle++;
 } 
