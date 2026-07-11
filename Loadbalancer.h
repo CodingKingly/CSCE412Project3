@@ -15,9 +15,9 @@ class Loadbalancer{
     public:
         int nextServerID;
 
-        void loadBalancerStartCycle(int startCycle){};
-        void loadBalancerStartServers(int startServers){};
-        void loadBalancerStartRequest(){};
+        void loadBalancerStartCycle(int startCycle);
+        void loadBalancerStartServers(int startServers);
+        void loadBalancerStartRequest();
 
         void loadbalancerStart();
 

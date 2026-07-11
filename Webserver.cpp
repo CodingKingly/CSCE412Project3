@@ -10,7 +10,7 @@ void Webserver::runCycle()
     currentRequest.totalTime = currentRequest.totalTime - 1;
     if (currentRequest.totalTime <= 0)
     {
-        cout << "DONE with Request " << currentRequest.IPin;
+        cout << "DONE with Request " << currentRequest.IPin << endl;
         busy = false;
     }
 }
@@ -19,7 +19,7 @@ void Webserver::assignRequest(const Request &request)
 {
     busy = true;
     currentRequest = request;
-    std::cout << "Assigned new Request " << request.IPin;
+    std::cout << "Assigned new Request " << request.IPin << endl;;
 }
 
 bool Webserver::isBusy() const

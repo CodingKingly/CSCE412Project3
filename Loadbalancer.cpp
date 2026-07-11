@@ -31,7 +31,8 @@ void Loadbalancer::loadbalancerStart(){
 
     while(currentClockCycle < clockCycle){
 
-        cout << "Clock Cycle: " << currentClockCycle << " has started" << endl;
+        cout << "Clock Cycle: " << currentClockCycle << " has started" << endl
+        << "There are this many request left " << requestQueue.size() << endl;
 
         //Helps add or delete servers every 50 cycles 
         if (currentClockCycle % 50 == 0)
@@ -80,7 +81,7 @@ void Loadbalancer::loadbalancerStart(){
                 else{
                     WebserverVec.at(i).runCycle();
                     cout << "Server " << WebserverVec.at(i).ServerID << 
-                    " just complted it's task of the IP" << WebserverVec.at(i).seeRequest().IPin << endl;
+                    " just completed it's task with the IPin " << WebserverVec.at(i).seeRequest().IPin << endl;
                 }
             }
             
@@ -95,5 +96,9 @@ void Loadbalancer::loadbalancerStart(){
 
         //add to the current clock cycle 
         currentClockCycle++;
+        if(requestQueue.empty()){
+            cout << "all request are complete!" << endl;
+            break;
+        }
     }
 } 
