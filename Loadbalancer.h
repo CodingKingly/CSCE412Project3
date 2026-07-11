@@ -13,15 +13,12 @@ class Loadbalancer{
         int numServers = 0;
 
     public:
-        
+        int nextServerID;
+
         void loadBalancerStartCycle(int startCycle){};
         void loadBalancerStartServers(int startServers){};
         void loadBalancerStartRequest(){};
-
-        void createServer();
-        void deleteServer();
-        void assignServer();
-
+        
         void loadbalancerStart();
 
         

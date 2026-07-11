@@ -6,9 +6,11 @@ void Loadbalancer::loadBalancerStartCycle(int startCycle){
 
 void Loadbalancer::loadBalancerStartServers(int startServers){
     numServers = startServers;
+    nextServerID = 0;
     for(int i = 0; i < numServers; i++){
         Webserver newWbeserver;
-        newWbeserver.ServerID = i;
+        newWbeserver.ServerID = nextServerID;
+        nextServerID++;
         WebserverVec.push_back(newWbeserver);
     }
 }
@@ -22,39 +24,45 @@ void Loadbalancer::loadBalancerStartRequest(){
 }
 
 void Loadbalancer::loadbalancerStart(){
-
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> addRequest(0, 5);
     int currentClockCycle = 0;
 
     while(currentClockCycle < clockCycle){
 
         cout << "Clock Cycle: " << currentClockCycle << " has started" << endl;
 
-        //Helps add servers 
-        if(requestQueue.size() > WebserverVec.size() * 100){
-            int numNewServers = (((requestQueue.size() - (WebserverVec.size() * 100)) + 99) / 100);
+        //Helps add or delete servers every 50 cycles 
+        if (currentClockCycle % 50 == 0)
+        {   //Helps add a server
+            if(requestQueue.size() > WebserverVec.size() * 100){
+                int numNewServers = (((requestQueue.size() - (WebserverVec.size() * 100)) + 99) / 100);
 
-            for(int j = 0; j < numNewServers ; j++){
-                Webserver newWbeserver;
-                newWbeserver.ServerID = WebserverVec.size();
-                WebserverVec.push_back(newWbeserver);
-                
-                cout << "added a new server: " << newWbeserver.ServerID << endl;
-            }
-        }
-        //Helps delete a server
-        else if(requestQueue.size() < WebserverVec.size() * 50){
-            
-                int numDelServers =  ((WebserverVec.size() * 50 - requestQueue.size()) + 49)/50; 
-                for(int j = static_cast<int>(WebserverVec.size()) - 1; j >= 0 && numDelServers > 0 && WebserverVec.size() > 1  ; j--){
-                    if(WebserverVec.at(j).isBusy()){
-                        continue;
-                    }
-                    WebserverVec.erase(WebserverVec.begin() + j);
-                    numDelServers--;
-
+                for(int j = 0; j < numNewServers ; j++){
+                    Webserver newWbeserver;
+                    newWbeserver.ServerID = nextServerID;
+                    nextServerID++;
+                    WebserverVec.push_back(newWbeserver);
+                    
+                    cout << "added a new server: " << newWbeserver.ServerID << endl;
                 }
-            
-           
+            }
+            //Helps delete a server
+            else if(requestQueue.size() < WebserverVec.size() * 50){
+                
+                    int numDelServers =  ((WebserverVec.size() * 50 - requestQueue.size()) + 49)/50; 
+                    for(int j = static_cast<int>(WebserverVec.size()) - 1; j >= 0 && numDelServers > 0 && WebserverVec.size() > 1  ; j--){
+                        if(WebserverVec.at(j).isBusy()){
+                            continue;
+                        }
+                        cout << "Deleted a server: " << WebserverVec.at(j).ServerID << endl;
+                        WebserverVec.erase(WebserverVec.begin() + j);
+                        numDelServers--;
+                        
+
+                    }
+            }
         }
 
         //Assign the servers or Run the server
@@ -72,10 +80,6 @@ void Loadbalancer::loadbalancerStart(){
         }
 
         //Random chance to add work
-        random_device rd;
-        mt19937 gen(rd());
-        uniform_int_distribution<> addRequest(0, 5);
-        
         int randomNumForRequest = addRequest(gen);
         if(randomNumForRequest == 0){
             Request newrequest = makearandomRequest();
