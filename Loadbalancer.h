@@ -10,7 +10,7 @@ class Loadbalancer{
         std::queue<Request> requestQueue; 
         std::vector<Webserver> WebserverVec; 
         int clockCycle = 0;
-        int numServers = 0;
+        // int numServers = 0;
 
     public:
         int nextServerID;
@@ -18,7 +18,7 @@ class Loadbalancer{
         void loadBalancerStartCycle(int startCycle){};
         void loadBalancerStartServers(int startServers){};
         void loadBalancerStartRequest(){};
-        
+
         void loadbalancerStart();
 
         

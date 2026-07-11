@@ -5,9 +5,9 @@ void Loadbalancer::loadBalancerStartCycle(int startCycle){
 }
 
 void Loadbalancer::loadBalancerStartServers(int startServers){
-    numServers = startServers;
+    
     nextServerID = 0;
-    for(int i = 0; i < numServers; i++){
+    for(int i = 0; i < startServers; i++){
         Webserver newWbeserver;
         newWbeserver.ServerID = nextServerID;
         nextServerID++;
@@ -59,8 +59,6 @@ void Loadbalancer::loadbalancerStart(){
                         cout << "Deleted a server: " << WebserverVec.at(j).ServerID << endl;
                         WebserverVec.erase(WebserverVec.begin() + j);
                         numDelServers--;
-                        
-
                     }
             }
         }
@@ -73,10 +71,19 @@ void Loadbalancer::loadbalancerStart(){
             }
             else if(WebserverVec.at(i).isBusy()){
                 WebserverVec.at(i).runCycle();
-                cout << "Server" << WebserverVec.at(i).ServerID << 
-                " completed one clock cycle of IP" << WebserverVec.at(i).seeRequest().IPin << 
-                " time left of request is: " << WebserverVec.at(i).seeRequest().totalTime << endl;
+
+                if(WebserverVec.at(i).seeRequest().totalTime != 0){
+                    cout << "Server " << WebserverVec.at(i).ServerID << 
+                    " completed one clock cycle of IP" << WebserverVec.at(i).seeRequest().IPin << 
+                    " time left of request is: " << WebserverVec.at(i).seeRequest().totalTime << endl;
+                }
+                else{
+                    WebserverVec.at(i).runCycle();
+                    cout << "Server " << WebserverVec.at(i).ServerID << 
+                    " just complted it's task of the IP" << WebserverVec.at(i).seeRequest().IPin << endl;
+                }
             }
+            
         }
 
         //Random chance to add work
