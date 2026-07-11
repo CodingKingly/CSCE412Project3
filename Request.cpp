@@ -16,7 +16,7 @@ Request makearandomRequest()
     randomIPout += to_string(distrib(gen)) + "." + to_string(distrib(gen)) + "." + to_string(distrib(gen)) + "." + to_string(distrib(gen));
 
     // Random Completion time
-    uniform_int_distribution<> randomTimeDistrib(0,100);
+    uniform_int_distribution<> randomTimeDistrib(1,100);
 
     int randomTotalTime = randomTimeDistrib(gen);
 
@@ -30,6 +30,6 @@ Request makearandomRequest()
     }
 
     struct Request RandomRequest = {randomIPin, randomIPout,randomTotalTime, randomJobType };
-    
+
     return RandomRequest;
 }
