@@ -8,7 +8,7 @@
 class Loadbalancer{
     private: 
         std::queue<Request> requestQueue; 
-        std::queue<Webserver> WebserverQueue; 
+        std::vector<Webserver> WebserverVec; 
         int clockCycle = 0;
         int numServers = 0;
 
@@ -16,7 +16,7 @@ class Loadbalancer{
         
         void loadBalancerStartCycle(int startCycle){};
         void loadBalancerStartServers(int startServers){};
-        void loadBalancerStartRequest(int startRequest){};
+        void loadBalancerStartRequest(){};
 
         void createServer();
         void deleteServer();
