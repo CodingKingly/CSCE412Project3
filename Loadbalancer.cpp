@@ -6,7 +6,7 @@ void Loadbalancer::loadBalancerStartCycle(int startCycle){
 
 void Loadbalancer::loadBalancerStartServers(int startServers){
     numServers = startServers;
-    for(int i = 0; i < startServers; i++){
+    for(int i = 0; i < numServers; i++){
         Webserver newWbeserver;
         newWbeserver.ServerID = i;
         WebserverVec.push_back(newWbeserver);
@@ -15,7 +15,7 @@ void Loadbalancer::loadBalancerStartServers(int startServers){
 
 void Loadbalancer::loadBalancerStartRequest(){
     
-    for(int i = 0; i < numServers * 100 ; i++){
+    for(int i = 0; i < WebserverVec.size() * 100 ; i++){
         Request newrequest = makearandomRequest();
         requestQueue.push(newrequest);
     }
@@ -25,27 +25,42 @@ void Loadbalancer::loadbalancerStart(){
 
     int currentClockCycle = 0;
 
-    while(currentClockCycle <= clockCycle){
+    while(currentClockCycle < clockCycle){
 
         cout << "Clock Cycle: " << currentClockCycle << " has started" << endl;
 
-        //Helps current assign Servers to a task 
-        if(requestQueue.size() < numServers * 100){
-            int numNewServers = ceil((requestQueue.size() - (numServers * 100))/100);
+        //Helps add servers 
+        if(requestQueue.size() > WebserverVec.size() * 100){
+            int numNewServers = (((requestQueue.size() - (WebserverVec.size() * 100)) + 99) / 100);
+
             for(int j = 0; j < numNewServers ; j++){
                 Webserver newWbeserver;
+                newWbeserver.ServerID = WebserverVec.size();
                 WebserverVec.push_back(newWbeserver);
-                newWbeserver.ServerID = numServers + 1 + j;
-                numServers++;
-                cout << "added a new server: " << endl;
+                
+                cout << "added a new server: " << newWbeserver.ServerID << endl;
             }
+        }
+        //Helps delete a server
+        else if(requestQueue.size() < WebserverVec.size() * 50){
+            
+                int numDelServers =  ((WebserverVec.size() * 50 - requestQueue.size()) + 49)/50; 
+                for(int j = static_cast<int>(WebserverVec.size()) - 1; j >= 0 && numDelServers > 0 && WebserverVec.size() > 1  ; j--){
+                    if(WebserverVec.at(j).isBusy()){
+                        continue;
+                    }
+                    WebserverVec.erase(WebserverVec.begin() + j);
+                    numDelServers--;
+
+                }
+            
+           
         }
 
         //Assign the servers or Run the server
-        for(int i = 0; i < numServers; i++){
+        for(int i = 0; i < WebserverVec.size(); i++){
             if(!WebserverVec.at(i).isBusy() && !requestQueue.empty()){
                 WebserverVec.at(i).assignRequest(requestQueue.front());
-                WebserverVec.at(i).busy = true;
                 requestQueue.pop();
             }
             else if(WebserverVec.at(i).isBusy()){
