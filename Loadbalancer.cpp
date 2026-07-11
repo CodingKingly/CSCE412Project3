@@ -15,6 +15,11 @@ void Loadbalancer::addRequest(Request re){
 bool Loadbalancer::requestQueueempty(){
     return requestQueue.empty();
 }
+
+int Loadbalancer::getRequestQueueSize(){
+    return requestQueue.size();
+}
+
 void Loadbalancer::loadBalancerStartServers(int startServers){
     nextServerID = 0;
     for(int i = 0; i < startServers; i++){
@@ -25,22 +30,17 @@ void Loadbalancer::loadBalancerStartServers(int startServers){
     }
 }
 
-void Loadbalancer::loadBalancerStartRequest(){
+// void Loadbalancer::loadBalancerStartRequest(){
     
-    for(int i = 0; i < WebserverVec.size() * 100 ; i++){
-        Request newrequest = makearandomRequest();
-        requestQueue.push(newrequest);
-    }
-}
+//     for(int i = 0; i < WebserverVec.size() * 100 ; i++){
+//         Request newrequest = makearandomRequest();
+//         requestQueue.push(newrequest);
+//     }
+// }
 
-int Loadbalancer::getRequestQueueSize(){
-    return requestQueue.size();
-}
 
 void Loadbalancer::OneCylce(){
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> addRequest(0, 5);
+
 
         //Helps add or delete servers every 50 cycles 
         if (clockCycle % 50 == 0)
@@ -87,19 +87,11 @@ void Loadbalancer::OneCylce(){
                     " time left of request is: " << WebserverVec.at(i).seeRequest().totalTime << endl;
                 }
                 else{
-                    WebserverVec.at(i).runCycle();
                     cout << "Server " << WebserverVec.at(i).ServerID << 
                     " just completed it's task with the IPin " << WebserverVec.at(i).seeRequest().IPin << endl;
                 }
             }
             
-        }
-
-        //Random chance to add work
-        int randomNumForRequest = addRequest(gen);
-        if(randomNumForRequest == 0){
-            Request newrequest = makearandomRequest();
-            requestQueue.push(newrequest);
         }
 
         //add to the current clock cycle 

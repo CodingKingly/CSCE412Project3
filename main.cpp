@@ -1,10 +1,11 @@
 #include <iostream>
+#include <random>
 #include "Loadbalancer.h"
 #include "Request.h"
 using namespace std;
 
 int main(){
-
+    //Get the inputs
     int numServers = 0;
     cout << "Input the starting amount of Servers ";
     cin >> numServers;
@@ -18,6 +19,7 @@ int main(){
     << "The total servers are: " << numServers << endl 
     << "The starting amount of requests will be Number of Servers * 100: " << numServers * 100;
 
+    //Set up the Load balancers
     int processingServers = (numServers + 1) / 2;
     int streamingServers = numServers / 2;
     Loadbalancer S_loadBalancer;
@@ -36,10 +38,14 @@ int main(){
         else if(newrequest.jobType == 's'){
             S_loadBalancer.addRequest(newrequest);
         }
-     }
+    }
     
     int currentClockCycle = 0;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> addRequest(0, 5);
 
+    //Starting the loop
     while(currentClockCycle < totalClockCyles ){
 
         cout << "Clock Cycle: " << currentClockCycle << " has started" << endl
@@ -52,9 +58,16 @@ int main(){
         cout << "-----P Cycle-----" << endl;
         P_loadBalancer.OneCylce();
         
-        if(P_loadBalancer.requestQueueempty() && S_loadBalancer.requestQueueempty()){
-                cout << "all request are complete!" << endl;
-                break;
+        //Generate random request 
+        int randomNumForRequest = addRequest(gen);
+        if(randomNumForRequest == 0){
+            Request newrequest = makearandomRequest();
+            if(newrequest.jobType == 'p'){
+            P_loadBalancer.addRequest(newrequest);
+                }
+            else if(newrequest.jobType == 's'){
+            S_loadBalancer.addRequest(newrequest);
+                }  
         }
 
         currentClockCycle++;
