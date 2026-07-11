@@ -26,15 +26,29 @@ void Loadbalancer::loadbalancerStart(){
 
     while(currentClockCycle <= clockCycle){
 
-        cout << "Clock Cycle: " << currentClockCycle << " has started";
+        cout << "Clock Cycle: " << currentClockCycle << " has started" << endl;
 
         //Helps current assign Servers to a task 
+        if(requestQueue.size() < numServers * 100){
+            int numNewServers = ceil((requestQueue.size() - (numServers * 100))/100);
+            for(int j = 0; j < numNewServers ; j++){
+                Webserver newWbeserver;
+                WebserverVec.push_back(newWbeserver);
+                numServers++;
+                cout << "added a new server: " << endl;
+            }
+        }
+
+        //Assign the servers
         for(int i = 0; i < numServers; i++){
             if(!WebserverVec.at(i).isBusy() && !requestQueue.empty()){
                 WebserverVec.at(i).assignRequest(requestQueue.front());
                 requestQueue.pop();
             }
         }
-        
+
+        //
+
+
     }
 } 
