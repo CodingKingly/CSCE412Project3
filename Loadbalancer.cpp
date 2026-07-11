@@ -53,12 +53,21 @@ void Loadbalancer::loadbalancerStart(){
                 cout << "Server" << WebserverVec.at(i).ServerID << 
                 " completed one clock cycle of IP" << WebserverVec.at(i).seeRequest().IPin << 
                 " time left of request is: " << WebserverVec.at(i).seeRequest().totalTime << endl;
-                
             }
         }
 
-    
-       
+        //Random chance to add work
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_int_distribution<> addRequest(0, 5);
+        
+        int randomNumForRequest = addRequest(gen);
+        if(randomNumForRequest == 0){
+            Request newrequest = makearandomRequest();
+            requestQueue.push(newrequest);
+        }
 
+        //add to the current clock cycle 
+        currentClockCycle++;
     }
 } 
