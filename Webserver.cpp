@@ -26,3 +26,7 @@ bool Webserver::isBusy() const
 {
     return busy;
 }
+
+Request Webserver::seeRequest(){
+    return currentRequest;
+}

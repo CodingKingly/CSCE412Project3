@@ -7,11 +7,14 @@
 class Webserver{
     private:
         Request currentRequest;
-        bool busy;
-    
-    public: 
+        
 
+    public: 
+    bool busy;
+    int ServerID;
+    
     void assignRequest(const Request& request);
+    Request seeRequest();
     void runCycle();
 
     bool isBusy() const;
