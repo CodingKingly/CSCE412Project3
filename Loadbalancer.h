@@ -20,8 +20,8 @@ class Loadbalancer{
         
 
         void loadBalancerType(char type);
-        void loadBalancerStartCycle(int startCycle);
-        void loadBalancerStartServers(int startServers);
+        void loadBalancerStartCycle(int startCycle); // unused right now
+        void loadBalancerStartServers(int startServers);// unused right now
         void loadBalancerStartRequest();
         int getRequestQueueSize();
         bool requestQueueempty();
