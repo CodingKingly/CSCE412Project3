@@ -1,8 +1,26 @@
+/**
+ * @file main.cpp
+ * @brief Runs the processing and streaming load-balancer simulation.
+ * @author Abel Asteway
+ * @date 2026
+ */
+
 #include <iostream>
 #include <random>
 #include "Loadbalancer.h"
 #include "Request.h"
 using namespace std;
+
+ /**
+ * @brief Entry point for the load-balancer simulation.
+ *
+ * Requests the starting server count and simulation duration, creates
+ * processing and streaming load balancers, generates the initial queue,
+ * and executes both load balancers for the selected number of cycles.
+ *
+ * @return 0 when the simulation completes successfully, or a nonzero
+ * value when the user enters invalid input.
+ */
 
 int main(){
     //Get the inputs
