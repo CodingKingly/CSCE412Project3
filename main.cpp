@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include <random>
+#include <iomanip>
 #include "Loadbalancer.h"
 #include "Request.h"
 using namespace std;
@@ -156,6 +157,35 @@ int main(){
     int streamingServersDeleted = S_loadBalancer.totalServersDeleted;
     int totalServersDeleted = processingServersDeleted + streamingServersDeleted;
 
+
+    // End-status server information
+    int activeServers_P = P_loadBalancer.getBusyServerCount();
+    int activeServers_S = S_loadBalancer.getBusyServerCount();
+    int totalActiveServers = activeServers_P + activeServers_S;
+    int inactiveServers_P = static_cast<int>(endingServerCount_P) - activeServers_P;
+    int inactiveServers_S =static_cast<int>(endingServerCount_S) - activeServers_S;
+    int totalInactiveServers =inactiveServers_P + inactiveServers_S;
+
+    // Each busy server has one request currently being processed.
+    int requestsInProgress_P = activeServers_P;
+    int requestsInProgress_S = activeServers_S;
+    int totalRequestsInProgress = requestsInProgress_P + requestsInProgress_S;
+
+    // Includes queued requests and requests currently being processed.
+    std::size_t totalUnfinishedRequests_P =endingQueueSize_P + requestsInProgress_P;
+
+    std::size_t totalUnfinishedRequests_S = endingQueueSize_S + requestsInProgress_S;
+
+    std::size_t totalUnfinishedRequests = totalUnfinishedRequests_P + totalUnfinishedRequests_S;
+
+    double serverUtilization = 0.0;
+
+    if (endingServerCount > 0)
+    {
+        serverUtilization =
+            (static_cast<double>(totalActiveServers) /
+            endingServerCount) * 100.0;
+    }
     cout << endl << "The load balancer is done running" << endl; 
 
     logFile << "PROCESSING LOAD BALANCER\n";
@@ -181,6 +211,32 @@ int main(){
     logFile << "Ending web servers: "<< endingServerCount << '\n';
     logFile << "Total web servers added: " << totalServersAdded << '\n';
     logFile << "Total web servers deleted: "<< totalServersDeleted << '\n';
+
+    logFile << "\nEND STATUS\n";
+    logFile << "================================\n";
+
+    logFile << "PROCESSING STATUS\n";
+    logFile << "Requests remaining in queue: "  << endingQueueSize_P << '\n';
+    logFile << "Requests currently processing: "    << requestsInProgress_P << '\n';
+    logFile << "Total unfinished requests: "  << totalUnfinishedRequests_P << '\n';
+    logFile << "Active/busy servers: "   << activeServers_P << '\n';
+    logFile << "Inactive/idle servers: "  << inactiveServers_P << "\n\n";
+
+    logFile << "STREAMING STATUS\n";
+    logFile << "Requests remaining in queue: " << endingQueueSize_S << '\n';
+    logFile << "Requests currently processing: "  << requestsInProgress_S << '\n';
+    logFile << "Total unfinished requests: " << totalUnfinishedRequests_S << '\n';
+    logFile << "Active/busy servers: " << activeServers_S << '\n';
+    logFile << "Inactive/idle servers: "<< inactiveServers_S << "\n\n";
+
+    logFile << "COMBINED END STATUS\n";
+    logFile << "Total requests remaining in queues: "<< endingQueueSize << '\n';
+    logFile << "Total requests currently processing: "<< totalRequestsInProgress << '\n';
+    logFile << "Total unfinished requests: "<< totalUnfinishedRequests << '\n';
+    logFile << "Total active/busy servers: "<< totalActiveServers << '\n';
+    logFile << "Total inactive/idle servers: "<< totalInactiveServers << '\n';
+    logFile << fixed << setprecision(2);
+    logFile << "Server utilization: "<< serverUtilization << "%\n";
 
     logFile.close();
 
@@ -210,4 +266,27 @@ int main(){
     cout << "Total web servers added: " << totalServersAdded << '\n';
 
     cout << "Total web servers deleted: " << totalServersDeleted << '\n';
+
+    cout << "\nEND STATUS\n";
+    cout << "================================\n";
+
+    cout << "PROCESSING STATUS\n";
+    cout << "Requests remaining in queue: "<< endingQueueSize_P << '\n';
+    cout << "Requests currently processing: "<< requestsInProgress_P << '\n';
+    cout << "Total unfinished requests: "<< totalUnfinishedRequests_P << '\n';
+    cout << "Active/busy servers: "<< activeServers_P << '\n';
+    cout << "Inactive/idle servers: "<< inactiveServers_P << "\n\n";
+    cout << "STREAMING STATUS\n";
+    cout << "Requests remaining in queue: "<< endingQueueSize_S << '\n';
+    cout << "Requests currently processing: "<< requestsInProgress_S << '\n';
+    cout << "Total unfinished requests: "<< totalUnfinishedRequests_S << '\n';
+    cout << "Active/busy servers: "<< activeServers_S << '\n';
+    cout << "Inactive/idle servers: "<< inactiveServers_S << "\n\n";
+    cout << "COMBINED END STATUS\n";
+    cout << "Total requests remaining in queues: "<< endingQueueSize << '\n';
+    cout << "Total requests currently processing: "<< totalRequestsInProgress << '\n';
+    cout << "Total unfinished requests: "<< totalUnfinishedRequests << '\n';
+    cout << "Total active/busy servers: "<< totalActiveServers << '\n';
+    cout << "Total inactive/idle servers: "<< totalInactiveServers << '\n';
+    cout << "Server utilization: "<< serverUtilization << "%\n";
 }
