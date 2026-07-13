@@ -33,6 +33,8 @@ class Loadbalancer{
     public:
         int nextServerID;/**< Identification number assigned to the next server. */
         char jobType; /**< Identification of the jobtype. */
+        int totalServersAdded = 0; /**< Servers added*/
+        int totalServersDeleted = 0;/**< Servers deleted*/
 
         /**
          * @brief Assigns the type of the workload
@@ -46,7 +48,12 @@ class Loadbalancer{
          */
         void loadBalancerStartCycle(int startCycle); 
         
-        
+        /**
+         * @brief Gets the amount of busy servers
+         * @return the amount of bust servers
+         */
+        int getBusyServerCount();
+
         /**
          * @brief Creates the requested number of starting web servers.Currently Unsused
          * @param startServers Number of servers to create.
@@ -64,6 +71,12 @@ class Loadbalancer{
          * @return Number of queued requests.
          */
         bool requestQueueempty();
+
+        /**
+         * @brief Returns the number of sercers
+         * @return Number of servers .
+         */
+        int getServerCount();
 
         /**
          * @brief Adds a request to the back of the request queue.

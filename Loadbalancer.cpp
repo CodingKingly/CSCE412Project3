@@ -20,6 +20,22 @@ int Loadbalancer::getRequestQueueSize(){
     return requestQueue.size();
 }
 
+int Loadbalancer::getServerCount(){
+    return WebserverVec.size();
+}
+
+int Loadbalancer::getBusyServerCount(){
+    int busyServerCount = 0;
+
+    for (const Webserver& server : WebserverVec) {
+        if (server.isBusy()) {
+            busyServerCount++;
+        }
+    }
+
+    return busyServerCount;
+}
+
 void Loadbalancer::loadBalancerStartServers(int startServers){
     nextServerID = 0;
     for(int i = 0; i < startServers; i++){
@@ -55,6 +71,7 @@ void Loadbalancer::OneCylce(){
                     WebserverVec.push_back(newWbeserver);
                     
                     cout << "added a new server: " << newWbeserver.ServerID << endl;
+                    totalServersAdded++;
                 }
             }
             //Helps delete a server
@@ -68,6 +85,7 @@ void Loadbalancer::OneCylce(){
                         cout << "Deleted a server: " << WebserverVec.at(j).ServerID << endl;
                         WebserverVec.erase(WebserverVec.begin() + j);
                         numDelServers--;
+                        totalServersDeleted++;
                     }
             }
         }
