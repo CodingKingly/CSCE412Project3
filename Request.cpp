@@ -20,8 +20,8 @@ Request makearandomRequest()
 
     int randomTotalTime = randomTimeDistrib(gen);
 
-    uniform_int_distribution<> randomTimeDistrib(0,1);
-    int randomJobTypeSeed = randomTimeDistrib(gen);
+    uniform_int_distribution<> randomTimeDistrib2(0,1);
+    int randomJobTypeSeed = randomTimeDistrib2(gen);
     //random jobtype 
     char randomJobType;
     if(randomJobTypeSeed % 2 == 0){

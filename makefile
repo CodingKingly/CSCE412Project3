@@ -23,5 +23,11 @@ Loadbalancer.o: Loadbalancer.cpp Loadbalancer.h Webserver.h Request.h
 run: $(TARGET)
 	./$(TARGET)
 
+docs:
+	doxygen Doxyfile
+
 clean:
 	rm -f $(OBJECTS) $(TARGET)
+
+clean-docs:
+	rm -rf docs
