@@ -159,111 +159,55 @@ int main(){
     cout << endl << "The load balancer is done running" << endl; 
 
     logFile << "PROCESSING LOAD BALANCER\n";
-    logFile << "Starting queue size: "
-            << startingQueueSize_P << '\n';
-    logFile << "Ending queue size: "
-            << endingQueueSize_P << '\n';
-    logFile << "Starting web servers: "
-            << startingServerCount_P << '\n';
-    logFile << "Ending web servers: "
-            << endingServerCount_P << '\n';
-    logFile << "Web servers added: "
-            << processingServersAdded << '\n';
-    logFile << "Web servers deleted: "
-            << processingServersDeleted << "\n\n";
+    logFile << "Starting queue size: "<< startingQueueSize_P << '\n';
+    logFile << "Ending queue size: "<< endingQueueSize_P << '\n';
+    logFile << "Starting web servers: "<< startingServerCount_P << '\n';
+    logFile << "Ending web servers: "<< endingServerCount_P << '\n';
+    logFile << "Web servers added: "<< processingServersAdded << '\n';
+    logFile << "Web servers deleted: "<< processingServersDeleted << "\n\n";
 
     logFile << "STREAMING LOAD BALANCER\n";
-    logFile << "Starting queue size: "
-            << startingQueueSize_S << '\n';
-    logFile << "Ending queue size: "
-            << endingQueueSize_S << '\n';
-    logFile << "Starting web servers: "
-            << startingServerCount_S << '\n';
-    logFile << "Ending web servers: "
-            << endingServerCount_S << '\n';
-    logFile << "Web servers added: "
-            << streamingServersAdded << '\n';
-    logFile << "Web servers deleted: "
-            << streamingServersDeleted << "\n\n";
+    logFile << "Starting queue size: "<< startingQueueSize_S << '\n';
+    logFile << "Ending queue size: "<< endingQueueSize_S << '\n';
+    logFile << "Starting web servers: "<< startingServerCount_S << '\n';
+    logFile << "Ending web servers: "<< endingServerCount_S << '\n';
+    logFile << "Web servers added: "<< streamingServersAdded << '\n';
+    logFile << "Web servers deleted: "<< streamingServersDeleted << "\n\n";
 
     logFile << "COMBINED TOTALS\n";
-    logFile << "Starting queue size: "
-            << startingQueueSize << '\n';
-    logFile << "Ending queue size: "
-            << endingQueueSize << '\n';
-    logFile << "Starting web servers: "
-            << startingServerCount << '\n';
-    logFile << "Ending web servers: "
-            << endingServerCount << '\n';
-    logFile << "Total web servers added: "
-            << totalServersAdded << '\n';
-    logFile << "Total web servers deleted: "
-            << totalServersDeleted << '\n';
+    logFile << "Starting queue size: "<< startingQueueSize << '\n';
+    logFile << "Ending queue size: "<< endingQueueSize << '\n';
+    logFile << "Starting web servers: "<< startingServerCount << '\n';
+    logFile << "Ending web servers: "<< endingServerCount << '\n';
+    logFile << "Total web servers added: " << totalServersAdded << '\n';
+    logFile << "Total web servers deleted: "<< totalServersDeleted << '\n';
 
     logFile.close();
 
     cout << "\nLOAD BALANCER SIMULATION SUMMARY\n";
     cout << "================================\n";
-    cout << "Clock cycles completed: "
-        << totalClockCyles << "\n\n";
-
+    cout << "Clock cycles completed: "<< totalClockCyles << "\n\n";
     cout << "PROCESSING LOAD BALANCER\n";
-
-    cout << "Starting queue size: "
-        << startingQueueSize_P << '\n';
-
-    cout << "Ending queue size: "
-        << endingQueueSize_P << '\n';
-
-    cout << "Starting web servers: "
-        << startingServerCount_P << '\n';
-
-    cout << "Ending web servers: "
-        << endingServerCount_P << '\n';
-
-    cout << "Web servers added: "
-        << processingServersAdded << '\n';
-
-    cout << "Web servers deleted: "
-        << processingServersDeleted << "\n\n";
-
+    cout << "Starting queue size: "<< startingQueueSize_P << '\n';
+    cout << "Ending queue size: "<< endingQueueSize_P << '\n';
+    cout << "Starting web servers: "<< startingServerCount_P << '\n';
+    cout << "Ending web servers: "<< endingServerCount_P << '\n';
+    cout << "Web servers added: "<< processingServersAdded << '\n';
+    cout << "Web servers deleted: "<< processingServersDeleted << "\n\n";
     cout << "STREAMING LOAD BALANCER\n";
-
-    cout << "Starting queue size: "
-        << startingQueueSize_S << '\n';
-
-    cout << "Ending queue size: "
-        << endingQueueSize_S << '\n';
-
-    cout << "Starting web servers: "
-        << startingServerCount_S << '\n';
-
-    cout << "Ending web servers: "
-        << endingServerCount_S << '\n';
-
-    cout << "Web servers added: "
-        << streamingServersAdded << '\n';
-
-    cout << "Web servers deleted: "
-        << streamingServersDeleted << "\n\n";
-
+    cout << "Starting queue size: "<< startingQueueSize_S << '\n';
+    cout << "Ending queue size: "<< endingQueueSize_S << '\n';
+    cout << "Starting web servers: "<< startingServerCount_S << '\n';
+    cout << "Ending web servers: "<< endingServerCount_S << '\n';
+    cout << "Web servers added: "<< streamingServersAdded << '\n';
+    cout << "Web servers deleted: "<< streamingServersDeleted << "\n\n";
     cout << "COMBINED TOTALS\n";
+    cout << "Starting queue size: "<< startingQueueSize << '\n';
+    cout << "Ending queue size: "<< endingQueueSize << '\n';
+    cout << "Starting web servers: " << startingServerCount << '\n';
+    cout << "Ending web servers: " << endingServerCount << '\n';
 
-    cout << "Starting queue size: "
-        << startingQueueSize << '\n';
+    cout << "Total web servers added: " << totalServersAdded << '\n';
 
-    cout << "Ending queue size: "
-        << endingQueueSize << '\n';
-
-    cout << "Starting web servers: "
-        << startingServerCount << '\n';
-
-    cout << "Ending web servers: "
-        << endingServerCount << '\n';
-
-    cout << "Total web servers added: "
-        << totalServersAdded << '\n';
-
-    cout << "Total web servers deleted: "
-        << totalServersDeleted << '\n';
+    cout << "Total web servers deleted: " << totalServersDeleted << '\n';
 }

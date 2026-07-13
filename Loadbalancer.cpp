@@ -1,3 +1,9 @@
+/**
+ * @file Loadbalancer.cpp
+ * @brief Implements queue management, server scaling, and request processing.
+ * @author Abel Asteway
+ * @date 2026
+ */
 #include "Loadbalancer.h"
 
 void Loadbalancer::loadBalancerStartCycle(int startCycle){

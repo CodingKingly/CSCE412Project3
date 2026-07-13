@@ -131,12 +131,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae4cfd53de2e6f746df7eeae8950ac8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the type of the workload.  <br /></td></tr>
 <tr class="memitem:aabbb8893728a87f914404f2e8fc58f7b" id="r_aabbb8893728a87f914404f2e8fc58f7b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aabbb8893728a87f914404f2e8fc58f7b">loadBalancerStartCycle</a> (int startCycle)</td></tr>
 <tr class="memdesc:aabbb8893728a87f914404f2e8fc58f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a starting cycle.  <br /></td></tr>
+<tr class="memitem:aae802d7a14c3dfa47853205ab388a7b5" id="r_aae802d7a14c3dfa47853205ab388a7b5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aae802d7a14c3dfa47853205ab388a7b5">getBusyServerCount</a> ()</td></tr>
+<tr class="memdesc:aae802d7a14c3dfa47853205ab388a7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of busy servers.  <br /></td></tr>
 <tr class="memitem:a08d12216dbc0e7feef328e86b46db87d" id="r_a08d12216dbc0e7feef328e86b46db87d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a08d12216dbc0e7feef328e86b46db87d">loadBalancerStartServers</a> (int startServers)</td></tr>
 <tr class="memdesc:a08d12216dbc0e7feef328e86b46db87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the requested number of starting web servers.Currently Unsused.  <br /></td></tr>
 <tr class="memitem:a93b0921ff07815bc30beccca8f20c145" id="r_a93b0921ff07815bc30beccca8f20c145"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a93b0921ff07815bc30beccca8f20c145">getRequestQueueSize</a> ()</td></tr>
 <tr class="memdesc:a93b0921ff07815bc30beccca8f20c145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of requests waiting in the queue.  <br /></td></tr>
 <tr class="memitem:aa020c51a2e8a6a998d9f8d73bdcef64b" id="r_aa020c51a2e8a6a998d9f8d73bdcef64b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa020c51a2e8a6a998d9f8d73bdcef64b">requestQueueempty</a> ()</td></tr>
 <tr class="memdesc:aa020c51a2e8a6a998d9f8d73bdcef64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of requests waiting in the queue.  <br /></td></tr>
+<tr class="memitem:ab200f30ca7db1cba2b6a2d3efb8083ce" id="r_ab200f30ca7db1cba2b6a2d3efb8083ce"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab200f30ca7db1cba2b6a2d3efb8083ce">getServerCount</a> ()</td></tr>
+<tr class="memdesc:ab200f30ca7db1cba2b6a2d3efb8083ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of sercers.  <br /></td></tr>
 <tr class="memitem:a052a1c5dc9934f6e94f60f366aeff7bb" id="r_a052a1c5dc9934f6e94f60f366aeff7bb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a052a1c5dc9934f6e94f60f366aeff7bb">addRequest</a> (<a class="el" href="struct_request.html">Request</a> re)</td></tr>
 <tr class="memdesc:a052a1c5dc9934f6e94f60f366aeff7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a request to the back of the request queue.  <br /></td></tr>
 <tr class="memitem:a872a3f4d2b0c2f9ac54ac955bc5e4155" id="r_a872a3f4d2b0c2f9ac54ac955bc5e4155"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a872a3f4d2b0c2f9ac54ac955bc5e4155">OneCylce</a> ()</td></tr>
@@ -148,6 +152,10 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a9a391706dfe906f4e5f2066938976404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identification number assigned to the next server.  <br /></td></tr>
 <tr class="memitem:af2b9ddc883330d0663a31aab07b160ef" id="r_af2b9ddc883330d0663a31aab07b160ef"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#af2b9ddc883330d0663a31aab07b160ef">jobType</a></td></tr>
 <tr class="memdesc:af2b9ddc883330d0663a31aab07b160ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identification of the jobtype.  <br /></td></tr>
+<tr class="memitem:af65587236af4b5ad7380030f6cbc4ae0" id="r_af65587236af4b5ad7380030f6cbc4ae0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af65587236af4b5ad7380030f6cbc4ae0">totalServersAdded</a> = 0</td></tr>
+<tr class="memdesc:af65587236af4b5ad7380030f6cbc4ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Servers added.  <br /></td></tr>
+<tr class="memitem:a803a0a0b45acef621a0ee36f8f113d79" id="r_a803a0a0b45acef621a0ee36f8f113d79"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a803a0a0b45acef621a0ee36f8f113d79">totalServersDeleted</a> = 0</td></tr>
+<tr class="memdesc:a803a0a0b45acef621a0ee36f8f113d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Servers deleted.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -187,11 +195,45 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00011">11</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>                                       {</div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.push(re);</div>
-<div class="line"><span class="lineno">   13</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00017">17</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                       {</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.push(re);</div>
+<div class="line"><span class="lineno">   19</span>}</div>
 <div class="ttc" id="aclass_loadbalancer_html_a6a8c728449d9963bf8b5f9973cce26cf"><div class="ttname"><a href="#a6a8c728449d9963bf8b5f9973cce26cf">Loadbalancer::requestQueue</a></div><div class="ttdeci">std::queue&lt; Request &gt; requestQueue</div><div class="ttdoc">Requests waiting for service.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00029">Loadbalancer.h:29</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aae802d7a14c3dfa47853205ab388a7b5" name="aae802d7a14c3dfa47853205ab388a7b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae802d7a14c3dfa47853205ab388a7b5">&#9670;&#160;</a></span>getBusyServerCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Loadbalancer::getBusyServerCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the amount of busy servers. </p>
+<dl class="section return"><dt>Returns</dt><dd>the amount of bust servers </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00033">33</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                    {</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">int</span> busyServerCount = 0;</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> Webserver&amp; server : <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>) {</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (server.isBusy()) {</div>
+<div class="line"><span class="lineno">   38</span>            busyServerCount++;</div>
+<div class="line"><span class="lineno">   39</span>        }</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> busyServerCount;</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="aclass_loadbalancer_html_a86135cd22ca93443aa24ba2e0a7d91f4"><div class="ttname"><a href="#a86135cd22ca93443aa24ba2e0a7d91f4">Loadbalancer::WebserverVec</a></div><div class="ttdeci">std::vector&lt; Webserver &gt; WebserverVec</div><div class="ttdoc">Servers managed by this instance.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00028">Loadbalancer.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -213,10 +255,35 @@ Private Attributes</h2></td></tr>
 <p>Returns the number of requests waiting in the queue. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number of queued requests. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00019">19</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                     {</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size();</div>
-<div class="line"><span class="lineno">   21</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00025">25</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>                                     {</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size();</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab200f30ca7db1cba2b6a2d3efb8083ce" name="ab200f30ca7db1cba2b6a2d3efb8083ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab200f30ca7db1cba2b6a2d3efb8083ce">&#9670;&#160;</a></span>getServerCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Loadbalancer::getServerCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of sercers. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of servers . </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00029">29</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                                {</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size();</div>
+<div class="line"><span class="lineno">   31</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -243,10 +310,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00003">3</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                       {</div>
-<div class="line"><span class="lineno">    4</span>    <a class="code hl_variable" href="#afb9db9d956433cf44a4d89d6a8f0f30e">clockCycle</a> = startCycle;</div>
-<div class="line"><span class="lineno">    5</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00009">9</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>                                                       {</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="#afb9db9d956433cf44a4d89d6a8f0f30e">clockCycle</a> = startCycle;</div>
+<div class="line"><span class="lineno">   11</span>}</div>
 <div class="ttc" id="aclass_loadbalancer_html_afb9db9d956433cf44a4d89d6a8f0f30e"><div class="ttname"><a href="#afb9db9d956433cf44a4d89d6a8f0f30e">Loadbalancer::clockCycle</a></div><div class="ttdeci">int clockCycle</div><div class="ttdoc">Current load-balancer clock cycle.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00030">Loadbalancer.h:30</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -274,17 +341,16 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00023">23</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                           {</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a> = 0;</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; startServers; i++){</div>
-<div class="line"><span class="lineno">   26</span>        Webserver newWbeserver;</div>
-<div class="line"><span class="lineno">   27</span>        newWbeserver.<a class="code hl_variable" href="class_webserver.html#a91f05ff904d918e506868d70ccfb9fc0">ServerID</a> = <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>;</div>
-<div class="line"><span class="lineno">   28</span>        <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>++;</div>
-<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.push_back(newWbeserver);</div>
-<div class="line"><span class="lineno">   30</span>    }</div>
-<div class="line"><span class="lineno">   31</span>}</div>
-<div class="ttc" id="aclass_loadbalancer_html_a86135cd22ca93443aa24ba2e0a7d91f4"><div class="ttname"><a href="#a86135cd22ca93443aa24ba2e0a7d91f4">Loadbalancer::WebserverVec</a></div><div class="ttdeci">std::vector&lt; Webserver &gt; WebserverVec</div><div class="ttdoc">Servers managed by this instance.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00028">Loadbalancer.h:28</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00045">45</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                           {</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a> = 0;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; startServers; i++){</div>
+<div class="line"><span class="lineno">   48</span>        Webserver newWbeserver;</div>
+<div class="line"><span class="lineno">   49</span>        newWbeserver.<a class="code hl_variable" href="class_webserver.html#a91f05ff904d918e506868d70ccfb9fc0">ServerID</a> = <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>;</div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>++;</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.push_back(newWbeserver);</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 <div class="ttc" id="aclass_loadbalancer_html_a9a391706dfe906f4e5f2066938976404"><div class="ttname"><a href="#a9a391706dfe906f4e5f2066938976404">Loadbalancer::nextServerID</a></div><div class="ttdeci">int nextServerID</div><div class="ttdoc">Identification number assigned to the next server.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00034">Loadbalancer.h:34</a></div></div>
 <div class="ttc" id="aclass_webserver_html_a91f05ff904d918e506868d70ccfb9fc0"><div class="ttname"><a href="class_webserver.html#a91f05ff904d918e506868d70ccfb9fc0">Webserver::ServerID</a></div><div class="ttdeci">int ServerID</div><div class="ttdoc">Unique identification number for the server.</div><div class="ttdef"><b>Definition</b> <a href="_webserver_8h_source.html#l00029">Webserver.h:29</a></div></div>
 </div><!-- fragment -->
@@ -313,10 +379,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00007">7</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    7</span>                                            {</div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="#af2b9ddc883330d0663a31aab07b160ef">jobType</a> = type;</div>
-<div class="line"><span class="lineno">    9</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00013">13</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>                                            {</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="#af2b9ddc883330d0663a31aab07b160ef">jobType</a> = type;</div>
+<div class="line"><span class="lineno">   15</span>}</div>
 <div class="ttc" id="aclass_loadbalancer_html_af2b9ddc883330d0663a31aab07b160ef"><div class="ttname"><a href="#af2b9ddc883330d0663a31aab07b160ef">Loadbalancer::jobType</a></div><div class="ttdeci">char jobType</div><div class="ttdoc">Identification of the jobtype.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00035">Loadbalancer.h:35</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -339,65 +405,69 @@ Private Attributes</h2></td></tr>
 <p>Executes one clock cycle of load-balancer activity. </p>
 <p>Processes busy servers, assigns requests to idle servers, and periodically adds or removes servers based on queue size. </p>
 
-<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00042">42</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>                           {</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>        <span class="comment">//Helps add or delete servers every 50 cycles </span></div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#afb9db9d956433cf44a4d89d6a8f0f30e">clockCycle</a> % 50 == 0)</div>
-<div class="line"><span class="lineno">   47</span>        {   <span class="comment">//Helps add a server</span></div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size() &gt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 100){</div>
-<div class="line"><span class="lineno">   49</span>                <span class="keywordtype">int</span> numNewServers = (((<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size() - (<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 100)) + 99) / 100);</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; numNewServers ; j++){</div>
-<div class="line"><span class="lineno">   52</span>                    Webserver newWbeserver;</div>
-<div class="line"><span class="lineno">   53</span>                    newWbeserver.<a class="code hl_variable" href="class_webserver.html#a91f05ff904d918e506868d70ccfb9fc0">ServerID</a> = <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>;</div>
-<div class="line"><span class="lineno">   54</span>                    <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>++;</div>
-<div class="line"><span class="lineno">   55</span>                    <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.push_back(newWbeserver);</div>
-<div class="line"><span class="lineno">   56</span>                    </div>
-<div class="line"><span class="lineno">   57</span>                    cout &lt;&lt; <span class="stringliteral">&quot;added a new server: &quot;</span> &lt;&lt; newWbeserver.<a class="code hl_variable" href="class_webserver.html#a91f05ff904d918e506868d70ccfb9fc0">ServerID</a> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   58</span>                }</div>
-<div class="line"><span class="lineno">   59</span>            }</div>
-<div class="line"><span class="lineno">   60</span>            <span class="comment">//Helps delete a server</span></div>
-<div class="line"><span class="lineno">   61</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size() &lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 50){</div>
-<div class="line"><span class="lineno">   62</span>                </div>
-<div class="line"><span class="lineno">   63</span>                    <span class="keywordtype">int</span> numDelServers =  ((<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 50 - <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size()) + 49)/50; </div>
-<div class="line"><span class="lineno">   64</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size()) - 1; j &gt;= 0 &amp;&amp; numDelServers &gt; 0 &amp;&amp; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() &gt; 1  ; j--){</div>
-<div class="line"><span class="lineno">   65</span>                        <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(j).isBusy()){</div>
-<div class="line"><span class="lineno">   66</span>                            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   67</span>                        }</div>
-<div class="line"><span class="lineno">   68</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Deleted a server: &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(j).ServerID &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   69</span>                        <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.erase(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.begin() + j);</div>
-<div class="line"><span class="lineno">   70</span>                        numDelServers--;</div>
-<div class="line"><span class="lineno">   71</span>                    }</div>
-<div class="line"><span class="lineno">   72</span>            }</div>
-<div class="line"><span class="lineno">   73</span>        }</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>        <span class="comment">//Assign the servers or Run the server</span></div>
-<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size(); i++){</div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">if</span>(!<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).isBusy() &amp;&amp; !<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.empty()){</div>
-<div class="line"><span class="lineno">   78</span>                <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).assignRequest(<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.front());</div>
-<div class="line"><span class="lineno">   79</span>                <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.pop();</div>
-<div class="line"><span class="lineno">   80</span>            }</div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).isBusy()){</div>
-<div class="line"><span class="lineno">   82</span>                <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).runCycle();</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().totalTime != 0){</div>
-<div class="line"><span class="lineno">   85</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Server &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).ServerID &lt;&lt; </div>
-<div class="line"><span class="lineno">   86</span>                    <span class="stringliteral">&quot; completed one clock cycle of IP&quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().IPin &lt;&lt; </div>
-<div class="line"><span class="lineno">   87</span>                    <span class="stringliteral">&quot; time left of request is: &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().totalTime &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   88</span>                }</div>
-<div class="line"><span class="lineno">   89</span>                <span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">   90</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Server &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).ServerID &lt;&lt; </div>
-<div class="line"><span class="lineno">   91</span>                    <span class="stringliteral">&quot; just completed it&#39;s task with the IPin &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().IPin &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   92</span>                }</div>
-<div class="line"><span class="lineno">   93</span>            }</div>
-<div class="line"><span class="lineno">   94</span>            </div>
-<div class="line"><span class="lineno">   95</span>        }</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>        <span class="comment">//add to the current clock cycle </span></div>
-<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="#afb9db9d956433cf44a4d89d6a8f0f30e">clockCycle</a>++;</div>
-<div class="line"><span class="lineno">   99</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00064">64</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                           {</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        <span class="comment">//Helps add or delete servers every 50 cycles </span></div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#afb9db9d956433cf44a4d89d6a8f0f30e">clockCycle</a> % 50 == 0)</div>
+<div class="line"><span class="lineno">   69</span>        {   <span class="comment">//Helps add a server</span></div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size() &gt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 100){</div>
+<div class="line"><span class="lineno">   71</span>                <span class="keywordtype">int</span> numNewServers = (((<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size() - (<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 100)) + 99) / 100);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; numNewServers ; j++){</div>
+<div class="line"><span class="lineno">   74</span>                    Webserver newWbeserver;</div>
+<div class="line"><span class="lineno">   75</span>                    newWbeserver.<a class="code hl_variable" href="class_webserver.html#a91f05ff904d918e506868d70ccfb9fc0">ServerID</a> = <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>;</div>
+<div class="line"><span class="lineno">   76</span>                    <a class="code hl_variable" href="#a9a391706dfe906f4e5f2066938976404">nextServerID</a>++;</div>
+<div class="line"><span class="lineno">   77</span>                    <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.push_back(newWbeserver);</div>
+<div class="line"><span class="lineno">   78</span>                    </div>
+<div class="line"><span class="lineno">   79</span>                    cout &lt;&lt; <span class="stringliteral">&quot;added a new server: &quot;</span> &lt;&lt; newWbeserver.<a class="code hl_variable" href="class_webserver.html#a91f05ff904d918e506868d70ccfb9fc0">ServerID</a> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   80</span>                    <a class="code hl_variable" href="#af65587236af4b5ad7380030f6cbc4ae0">totalServersAdded</a>++;</div>
+<div class="line"><span class="lineno">   81</span>                }</div>
+<div class="line"><span class="lineno">   82</span>            }</div>
+<div class="line"><span class="lineno">   83</span>            <span class="comment">//Helps delete a server</span></div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size() &lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 50){</div>
+<div class="line"><span class="lineno">   85</span>                </div>
+<div class="line"><span class="lineno">   86</span>                    <span class="keywordtype">int</span> numDelServers =  ((<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() * 50 - <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.size()) + 49)/50; </div>
+<div class="line"><span class="lineno">   87</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size()) - 1; j &gt;= 0 &amp;&amp; numDelServers &gt; 0 &amp;&amp; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size() &gt; 1  ; j--){</div>
+<div class="line"><span class="lineno">   88</span>                        <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(j).isBusy()){</div>
+<div class="line"><span class="lineno">   89</span>                            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   90</span>                        }</div>
+<div class="line"><span class="lineno">   91</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Deleted a server: &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(j).ServerID &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   92</span>                        <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.erase(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.begin() + j);</div>
+<div class="line"><span class="lineno">   93</span>                        numDelServers--;</div>
+<div class="line"><span class="lineno">   94</span>                        <a class="code hl_variable" href="#a803a0a0b45acef621a0ee36f8f113d79">totalServersDeleted</a>++;</div>
+<div class="line"><span class="lineno">   95</span>                    }</div>
+<div class="line"><span class="lineno">   96</span>            }</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>        <span class="comment">//Assign the servers or Run the server</span></div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.size(); i++){</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">if</span>(!<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).isBusy() &amp;&amp; !<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.empty()){</div>
+<div class="line"><span class="lineno">  102</span>                <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).assignRequest(<a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.front());</div>
+<div class="line"><span class="lineno">  103</span>                <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.pop();</div>
+<div class="line"><span class="lineno">  104</span>            }</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).isBusy()){</div>
+<div class="line"><span class="lineno">  106</span>                <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).runCycle();</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">if</span>(<a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().totalTime != 0){</div>
+<div class="line"><span class="lineno">  109</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Server &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).ServerID &lt;&lt; </div>
+<div class="line"><span class="lineno">  110</span>                    <span class="stringliteral">&quot; completed one clock cycle of IP&quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().IPin &lt;&lt; </div>
+<div class="line"><span class="lineno">  111</span>                    <span class="stringliteral">&quot; time left of request is: &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().totalTime &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  112</span>                }</div>
+<div class="line"><span class="lineno">  113</span>                <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  114</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Server &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).ServerID &lt;&lt; </div>
+<div class="line"><span class="lineno">  115</span>                    <span class="stringliteral">&quot; just completed it&#39;s task with the IPin &quot;</span> &lt;&lt; <a class="code hl_variable" href="#a86135cd22ca93443aa24ba2e0a7d91f4">WebserverVec</a>.at(i).seeRequest().IPin &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  116</span>                }</div>
+<div class="line"><span class="lineno">  117</span>            }</div>
+<div class="line"><span class="lineno">  118</span>            </div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>        <span class="comment">//add to the current clock cycle </span></div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_variable" href="#afb9db9d956433cf44a4d89d6a8f0f30e">clockCycle</a>++;</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+<div class="ttc" id="aclass_loadbalancer_html_a803a0a0b45acef621a0ee36f8f113d79"><div class="ttname"><a href="#a803a0a0b45acef621a0ee36f8f113d79">Loadbalancer::totalServersDeleted</a></div><div class="ttdeci">int totalServersDeleted</div><div class="ttdoc">Servers deleted.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00037">Loadbalancer.h:37</a></div></div>
+<div class="ttc" id="aclass_loadbalancer_html_af65587236af4b5ad7380030f6cbc4ae0"><div class="ttname"><a href="#af65587236af4b5ad7380030f6cbc4ae0">Loadbalancer::totalServersAdded</a></div><div class="ttdeci">int totalServersAdded</div><div class="ttdoc">Servers added.</div><div class="ttdef"><b>Definition</b> <a href="_loadbalancer_8h_source.html#l00036">Loadbalancer.h:36</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -419,10 +489,10 @@ Private Attributes</h2></td></tr>
 <p>Returns the number of requests waiting in the queue. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number of queued requests. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00015">15</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>                                    {</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.empty();</div>
-<div class="line"><span class="lineno">   17</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8cpp_source.html#l00021">21</a> of file <a class="el" href="_loadbalancer_8cpp_source.html">Loadbalancer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                                    {</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a6a8c728449d9963bf8b5f9973cce26cf">requestQueue</a>.empty();</div>
+<div class="line"><span class="lineno">   23</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -512,6 +582,42 @@ Private Attributes</h2></td></tr>
 <p>Requests waiting for service. </p>
 
 <p class="definition">Definition at line <a class="el" href="_loadbalancer_8h_source.html#l00029">29</a> of file <a class="el" href="_loadbalancer_8h_source.html">Loadbalancer.h</a>.</p>
+
+</div>
+</div>
+<a id="af65587236af4b5ad7380030f6cbc4ae0" name="af65587236af4b5ad7380030f6cbc4ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af65587236af4b5ad7380030f6cbc4ae0">&#9670;&#160;</a></span>totalServersAdded</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Loadbalancer::totalServersAdded = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Servers added. </p>
+
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8h_source.html#l00036">36</a> of file <a class="el" href="_loadbalancer_8h_source.html">Loadbalancer.h</a>.</p>
+
+</div>
+</div>
+<a id="a803a0a0b45acef621a0ee36f8f113d79" name="a803a0a0b45acef621a0ee36f8f113d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a803a0a0b45acef621a0ee36f8f113d79">&#9670;&#160;</a></span>totalServersDeleted</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Loadbalancer::totalServersDeleted = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Servers deleted. </p>
+
+<p class="definition">Definition at line <a class="el" href="_loadbalancer_8h_source.html#l00037">37</a> of file <a class="el" href="_loadbalancer_8h_source.html">Loadbalancer.h</a>.</p>
 
 </div>
 </div>

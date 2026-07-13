@@ -1,6 +1,6 @@
 /**
- * @file Loadbalancer.cpp
- * @brief Implements the Loadbalancer class and its server-scaling behavior.
+ * @file Loadbalancer.h
+ * @brief Declares the Loadbalancer class used to manage requests and servers.
  * @author Abel Asteway
  * @date 2026
  */

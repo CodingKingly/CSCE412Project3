@@ -1,3 +1,9 @@
+/**
+ * @file Webserver.cpp
+ * @brief Implements request assignment and clock-cycle processing.
+ * @author Abel Asteway
+ * @date 2026
+ */
 #include "Webserver.h"
 
 void Webserver::runCycle()

@@ -22,10 +22,11 @@ using namespace std;
  */
 struct Request
 {
-    std::string IPin;
-    std::string IPout;
-    int totalTime;
-    char jobType;
+    std::string IPin;/**< IP address that submitted the request. */
+    std::string IPout; /**< Destination IP address for the request. */
+    int totalTime; /**< Processing time remaining in clock cycles. */
+    char jobType;  /**< 'p' for processing or 's' for streaming. */
+
 };
 
 /**

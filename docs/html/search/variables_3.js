@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nextserverid_0',['nextServerID',['../class_loadbalancer.html#a9a391706dfe906f4e5f2066938976404',1,'Loadbalancer']]]
+  ['jobtype_0',['jobType',['../class_loadbalancer.html#af2b9ddc883330d0663a31aab07b160ef',1,'Loadbalancer::jobType'],['../struct_request.html#ad49a0f18615ea50f9a11cd2494c93044',1,'Request::jobType']]]
 ];

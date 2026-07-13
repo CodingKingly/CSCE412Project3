@@ -1,3 +1,9 @@
+/**
+ * @file Request.cpp
+ * @brief Implements randomized request generation.
+ * @author Abel Asteway
+ * @date 2026
+ */
 #include "Request.h"
 
 
